@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 
 <html>
-	<style>
-		img {
+<style>
+	.main {
+		width: 100%;
+		padding: 0 30px;
+	}
 
-		}
+	.header {
+		display: block;
+		text-align: center;
+	}
 
-		.element {
+	img {
+		width: 350px;
+		height: 256px;
+	}
 
-		}
+	.table {
 
-		.enum {
+	}
 
-		}
+	.element {
+		font-family: Helvetica, sans-serif;
+		width: 60px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: white;
+	}
 
-		.weight {
+	.elem-style {
+		padding: 0.1em;
+	}
 
-		}
+	.esymb {
+		padding: 0.1em;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
 
-		
-	</style>
+	.enum {
+		text-align: left;
+		font-size: 1em;
+	}
+
+	.weight {
+		text-align: right;
+		font-size: 0.75em;
+	}
+
+	.yellow {
+		background-color: #D7D0C8;
+	}
+</style>
+
+<head>
+	<title>Mendeleiev</title>
+</head>
+
+<body>
+	<div class="main">
+		<div class="header">
+			<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/08/08/mendeleev.jpg?quality=75&width=990&auto=webp&crop=982:726,smart" alt="Mendeleev with a cube">
+			<h1>Mendeleiev Periodic Table of Elements</h1>
+		</div>
+		<div class="tablebox">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">1.008</div>
+									<div class="esymb">H</div>
+									<div class="enum">1</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
 </html>
