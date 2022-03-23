@@ -1,0 +1,19 @@
+#!/bin/bash
+DIR=$1
+FILECOUNT=$2
+
+if [ -z "${DIR}" ] || [ -z "${FILECOUNT}" ]
+then
+	echo "usage: sh 03 <directory> <file count>"
+	exit 1
+fi
+
+if [ ! -d "${DIR}" ]; then mkdir -p "${DIR}"; fi
+cd "${DIR}"/ || exit 1
+
+for (( i=00; i<=FILECOUNT; i++ ))
+do
+	FILE=$(printf "ex%02d" "$i")
+	mkdir "${FILE}"
+done
+
