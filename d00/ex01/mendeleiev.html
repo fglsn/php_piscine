@@ -12,13 +12,22 @@
 		text-align: center;
 	}
 
+	.img-container {
+		margin: auto;
+	}
+
+
 	img {
-		width: 350px;
-		height: 256px;
+		width: 156px;
 	}
 
 	.table {
+		table-layout: fixed;
+		box-sizing: border-box;
+	}
 
+	td {
+		width: 60px;
 	}
 
 	.element {
@@ -51,7 +60,23 @@
 	}
 
 	.yellow {
-		background-color: #D7D0C8;
+		background-color: #F3E9D2;
+	}
+
+	.metaloids {
+		background-color: #C6DABF;
+	}
+
+	.metals {
+		background-color: #8FB8B7;
+	}
+
+	.illuminati {
+		background-color: #1A936F;
+	}
+
+	.midnight {
+		background-color: #114B5F;
 	}
 </style>
 
@@ -62,10 +87,9 @@
 <body>
 	<div class="main">
 		<div class="header">
-			<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/08/08/mendeleev.jpg?quality=75&width=990&auto=webp&crop=982:726,smart" alt="Mendeleev with a cube">
 			<h1>Mendeleiev Periodic Table of Elements</h1>
 		</div>
-		<div class="tablebox">
+		<div class="table-container">
 			<table class="table">
 				<tbody>
 					<tr>
@@ -75,6 +99,336 @@
 									<div class="weight">1.008</div>
 									<div class="esymb">H</div>
 									<div class="enum">1</div>
+								</div>
+							</div>
+						</td>
+						<td>&nbsp;</td>
+						<td rowspan="3" colspan="10" class="img-container">
+							<div>
+								<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/08/08/mendeleev.jpg?quality=75&width=990&auto=webp&crop=982:726,smart" alt="Mendeleev with a cube">
+							</div>
+						</td>
+						<td rowspan="1" colspan="5">
+							<div padding="0.5em"></div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">4.003</div>
+									<div class="esymb">He</div>
+									<div class="enum">2</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">6.94</div>
+									<div class="esymb">Li</div>
+									<div class="enum">3</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">9.012</div>
+									<div class="esymb">Be</div>
+									<div class="enum">4</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metaloids">
+								<div class="elem-style">
+									<div class="weight">26.982</div>
+									<div class="esymb">B</div>
+									<div class="enum">5</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">12.011</div>
+									<div class="esymb">C</div>
+									<div class="enum">6</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">14.007</div>
+									<div class="esymb">N</div>
+									<div class="enum">7</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">15.999</div>
+									<div class="esymb">O</div>
+									<div class="enum">8</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">18.998</div>
+									<div class="esymb">F</div>
+									<div class="enum">9</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">20.180</div>
+									<div class="esymb">Ne</div>
+									<div class="enum">10</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">22.990</div>
+									<div class="esymb">Na</div>
+									<div class="enum">11</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">24.305</div>
+									<div class="esymb">Mg</div>
+									<div class="enum">12</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">26.982</div>
+									<div class="esymb">Al</div>
+									<div class="enum">13</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metaloids">
+								<div class="elem-style">
+									<div class="weight">28.085</div>
+									<div class="esymb">Si</div>
+									<div class="enum">14</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">30.974</div>
+									<div class="esymb">P</div>
+									<div class="enum">15</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">32.06</div>
+									<div class="esymb">S</div>
+									<div class="enum">16</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">35.45</div>
+									<div class="esymb">Cl</div>
+									<div class="enum">17</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element yellow">
+								<div class="elem-style">
+									<div class="weight">39.948</div>
+									<div class="esymb">Ar</div>
+									<div class="enum">18</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">K</div>
+									<div class="enum">19</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">40.078</div>
+									<div class="esymb">Ca</div>
+									<div class="enum">20</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Sc</div>
+									<div class="enum">21</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Ti</div>
+									<div class="enum">22</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">V</div>
+									<div class="enum">23</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Cr</div>
+									<div class="enum">24</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Mn</div>
+									<div class="enum">25</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Fe</div>
+									<div class="enum">26</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Co</div>
+									<div class="enum">27</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Ni</div>
+									<div class="enum">28</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Cu</div>
+									<div class="enum">29</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Zn</div>
+									<div class="enum">30</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">Ga</div>
+									<div class="enum">31</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metaloids">
+								<div class="elem-style">
+									<div class="weight">72.630</div>
+									<div class="esymb">Ge</div>
+									<div class="enum">32</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">K</div>
+									<div class="enum">33</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">K</div>
+									<div class="enum">34</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">K</div>
+									<div class="enum">35</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="element metals">
+								<div class="elem-style">
+									<div class="weight">39.098</div>
+									<div class="esymb">K</div>
+									<div class="enum">36</div>
 								</div>
 							</div>
 						</td>
