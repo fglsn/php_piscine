@@ -2,23 +2,34 @@
 
 <html>
 <style>
-	.main {
+
+	body {
 		width: 100%;
+		color: #09303D;
+		font-family: Helvetica, sans-serif;
+		background-color: ivory;
+	}
+
+	.main {
 		padding: 0 30px;
+		position: relative;
 	}
 
 	.header {
+		position: relative;
+		text-shadow: 3px 3px #2a2c2e1a;
+		shadow
 		display: block;
 		text-align: center;
 	}
 
 	.img-container {
-		margin: auto;
+		display: flex;
+		justify-content: center;
 	}
 
-
 	img {
-		width: 156px;
+		width: 256px;
 	}
 
 	.table {
@@ -31,7 +42,6 @@
 	}
 
 	.element {
-		font-family: Helvetica, sans-serif;
 		width: 60px;
 		border-style: solid;
 		border-width: 1px;
@@ -119,8 +129,8 @@
 							</div>
 						</td>
 						<td>&nbsp;</td>
-						<td rowspan="3" colspan="10" class="img-container">
-							<div>
+						<td rowspan="3" colspan="10">
+							<div class="img-container">
 								<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/08/08/mendeleev.jpg?quality=75&width=990&auto=webp&crop=982:726,smart" alt="Mendeleev with a cube">
 							</div>
 						</td>
