@@ -1,0 +1,145 @@
+
+	body {
+		width: 100%;
+		color: #09303D;
+		font-family: Helvetica, sans-serif;
+		background-color: ivory;
+	}
+
+	.main {
+		padding: 0 30px;
+		position: relative;
+	}
+
+	.header {
+		position: relative;
+		padding: 2em 1em;
+		text-shadow: 3px 3px #2a2c2e1a;
+		display: block;
+		text-align: center;
+	}
+
+	.img-container {
+		padding: 1em 1em;
+		display: flex;
+		justify-content: center;
+		padding-top: 3em;
+	}
+
+	.align{
+		text-align: center;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 1.4vw;
+		padding-top: 3em;
+	}
+
+	img {
+		padding: 0.5em 1em;
+		width: 485px;
+		z-index: 1;
+	}
+
+	.table {
+		table-layout: fixed;
+		box-sizing: border-box;
+		margin: auto;
+	}
+
+	td {
+		width: 60px;
+	}
+
+	.element {
+		width: 60px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: white;
+	}
+
+	.elem-style {
+		padding: 0.1em;
+	}
+
+	.esymb {
+		padding: 0.1em;
+		text-align: center;
+		font-size: 1.65vw;
+		font-weight: bold;
+	}
+
+	.enum {
+		text-align: left;
+		font-size: 0.9vw;
+	}
+
+	.weight {
+		text-align: right;
+		font-size: 0.75vw;
+	}
+
+	.nonmetals {
+		background-color: #FFF5DC;
+	}
+
+	.metaloids {
+		background-color: #DDF1D6;
+	}
+
+	.metals {
+		background-color: #D7EFFA;
+	}
+
+	.noblegases {
+		background-color: #EED6D6;
+	}
+
+	.post-transition-metals {
+		background-color: #CBECD4;
+	}
+
+	.alkalines {
+		background-color: #E1D3EB;
+	}
+
+	.alkalimetals {
+		background-color: #FFC4C4;
+	}
+
+	.lanthanides {
+		background-color: #EBFFBD;
+	}
+
+	.actinides {
+		background-color: #FFF9B3;
+	}
+
+	@media only screen and (max-width: 600px) {
+
+		.main {
+			display: flex;
+			width: 100%;
+			padding: 0;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.header {
+			width: 100%;
+			padding: 0;
+		}
+
+		.img-container {
+			width: 100%;
+			padding: 0;
+		}
+
+		img {
+			width: 250px;
+			z-index: 1;
+			padding: 0;
+
+		}
+
+		.table-container {
+			overflow-x: auto;
+		}
