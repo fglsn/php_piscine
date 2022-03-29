@@ -3,8 +3,9 @@
 		width: 100%;
 		color: #09303D;
 		font-family: Helvetica, sans-serif;
-		/* background-color: ivory; */
-		background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/08/08/mendeleev.jpg?quality=75&width=990&auto=webp&crop=982:726,smart");
+		background: url(https://images.wallpaperscraft.com/image/single/atom_chemistry_molecule_125734_1280x1024.jpg) center no-repeat;
+		background-size: cover;
+		background-color: #f1eadb;
 	}
 
 	.main {
@@ -12,18 +13,13 @@
 		position: relative;
 	}
 
-	.header {
-		position: relative;
-		padding: 2em 1em;
-		text-shadow: 3px 3px #2a2c2e1a;
-		display: block;
-		text-align: center;
-	}
 
 	h1 {
 		text-align: center;
+		font-weight: bolder;
 		font-size: 2.5vw;
-		padding-right: 51px;
+		padding: 3vw;
+		text-shadow: 1px 3px #2a2c2e1e;
 	}
 
 	.img-container {
@@ -52,8 +48,9 @@
 		background-color:rgba(248, 248, 248, 0.712);
 		box-sizing: border-box;
 		margin: auto;
-		padding: 15px;
-
+		padding: 25px 45px;
+		border-radius: 15px;
+		box-shadow: 2px 2px #dddccf5e;
 	}
 
 	.table-container {
@@ -71,7 +68,9 @@
 		margin: auto;
 		border-style: solid;
 		border-width: 1px;
-		border-color: white;
+		border-radius: 2px;
+		border-color: rgba(255, 255, 255, 0.164);
+		box-shadow: 1px 2px #dad9d154;
 	}
 
 	.elem-style {
@@ -131,37 +130,22 @@
 		background-color: #FFF9B3;
 	}
 
-	@media only screen and (min-width: 600px) {
+	@media only screen and (max-width: 600px) {
 
 		.main {
 			display: flex;
 			width: 100%;
-			padding: 0;
-			align-items: flex-start;
 			flex-direction: column;
 		}
 
 		.header {
 			min-width: 50px;
-			padding: 0;
-		}
-
-		.img-container {
-			width: 80%;
-			padding: 0;
-		}
-
-		img {
-			min-width: 50px;
-			margin: auto;
-			z-index: 1;
-			padding: 0;
-
 		}
 
 		.table-container {
 			min-width: 50px;
 			margin: auto;
+			padding: 1em;
 		}
 
 		table {
