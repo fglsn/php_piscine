@@ -4,5 +4,10 @@
 
 include("ft_split.php");
 
-print_r(ft_split("Hello    World AAA "));
+$f = fopen( 'php://stdin', 'r' );
+
+$line = fgets( $f ); 
+
+print_r(ft_split($line));
+fclose($f);
 ?>

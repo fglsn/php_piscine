@@ -1,27 +1,30 @@
 #!/usr/bin/php
 <?php
 
-	$input = fopen('php://stdin', 'r');
+	$stdin = fopen('php://stdin', 'r');
 
-	while ($input && !feof($input))
+	while ($stdin && !feof($stdin))
 	{
 		echo "Enter a number: ";
-		$n = str_replace("\n", "", fgets($input));
+		$n = fgets($stdin);
 		if ($n) {
-			switch (n) {
-				case is_numeric($n) && $n % 2 == 0:
-					echo "The number $n is even\n";
-					break;
-				case is_numeric($n) && $n % 2 != 0:
-					echo "The number $n is odd\n";
-					break;
-				case $n == '';
-					echo "The number $n is odd\n";
-					break;
-				default:
-					echo "'$n' is not a number\n";
+			$n = str_replace("\n", "", $n);
+			if (is_numeric($n)) {
+				$mod = $n % 2;
+				switch ($mod) {
+					case 0;
+						echo "The number $n is even\n";
+						break;
+					case !0:
+						echo "The number $n is odd\n";
+						break;
+				}
+			}
+			else {
+				echo "'$n' is not a number\n";
 			}
 		}
 	}
 	echo "\n";
+	fclose($stdin);
 ?>
