@@ -3,4 +3,22 @@ https://automatetheboringstuff.com/2e/chapter7/
 
 https://regexone.com/
 
-https://www.phpliveregex.com/
+https://www.phpliveregex.com
+
+
+
+
+Utmp: 
+
+/var/run/utmpx
+https://github.com/libyal/dtformats/blob/main/documentation/Utmp%20login%20records%20format.asciidoc#3-mac-os-x-105-utmpx
+There are multiple utmp file formats:
+- Linux libc5		utmp
+- Linux libc6		utmp
+- Mac OS X			utmp
+- Mac OS X 10.5 	utmpx
+
+Types of login:
+7		USER_PROCESS	Process spawned by user
+
+To see why 628 bytes:wc -c /var/run/utmpx; (open another terminal); repeat, subtract differences.
