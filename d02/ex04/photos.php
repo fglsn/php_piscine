@@ -1,28 +1,69 @@
 #!/usr/bin/php
 <?php
 
-function save_img($url, $file){
-	$fp = fopen($file, 'w+');
+//Call first link
+//Take content of html
+//Find all IMGs by matching regexes
+//Find links to imgs
+//Create directory using given argv[1] without http(s): prefix
+//find name of image (after last slash in string plus dot and extention)
+//Download imgs to created directory
 
-	$curl = curl_init($url);
-	// curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); // enable if you want
-	curl_setopt($curl, CURLOPT_FILE, $fp);          // output to file
-	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt($curl, CURLOPT_TIMEOUT, 1000);      // some large value to allow curl to run for a long time
-	curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0');
-	// curl_setopt($curl, CURLOPT_VERBOSE, true);   // Enable this line to see debug prints
-	curl_exec($curl);
+function curl_call($url) {
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_FAILONERROR, 1);
+	curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 50);
+	curl_setopt($curl, CURLOPT_HEADER, TRUE);
+	curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+	$output = curl_exec($curl);
+	curl_close($curl);
+	return $output;
+}
 
-	curl_close($curl);                              // closing curl handle
-	fclose($fp);  
+function filename($link) {
+	$pos = strripos($link, "/");
+	$link = substr($link, $pos + 1);
+	//echo $link . "\n";
+	return ($link);
+}
+
+function save_image($name) {
+	$url = ‘http://somedomain.com/images/’.$name.‘.jpg’;
+	$data = makeCurlCall($url);
+	file_put_contents(‘photos/’.$name.‘.jpg’, $data);
+	}
+	$i = 1;
+	$l = 10;
+	while ($i < $l) {
+	$html = makeCurlCall(‘http://somedomain.com/id/’.$i.‘/’);
+	getImages($html);
+	$i += 1;
+}
+
+function filename($img_tags) {
+	foreach ($img_tags[1] as $img_link) {
+		$img_name = filename($img_link);
+	}
+}
+
+
+function find_tags($html) {
+	$img_tags = array();
+	preg_match_all('/<img\s+[^>]*src="([^"]*)"[^>]*>/is', $html, $img_tags);
+	if (count($img_tags[0]) != 0)
+		return($img_tags);
+	else
+		exit;
 }
 
 if ($argc == 2) {
 	$url = $argv[1];
-	$content = file_get_contents($url);
-
-	
-	save_img($argv[1], "local_image1.svg");
+	$html = curl_call($url);
+	$folder = folder_name($html);
+	$img_tags = find_tags($html);
+	save_image($img_name, $link, $folder);
 }
 
 ?>
