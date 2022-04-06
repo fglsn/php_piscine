@@ -29,41 +29,56 @@ function filename($link) {
 	return ($link);
 }
 
-function save_image($name) {
-	$url = ‘http://somedomain.com/images/’.$name.‘.jpg’;
-	$data = makeCurlCall($url);
-	file_put_contents(‘photos/’.$name.‘.jpg’, $data);
-	}
-	$i = 1;
-	$l = 10;
-	while ($i < $l) {
-	$html = makeCurlCall(‘http://somedomain.com/id/’.$i.‘/’);
-	getImages($html);
-	$i += 1;
+function save_image($name, $url, $folder) {
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US)");
+	$raw = curl_exec($curl);
+	//if (!$raw)
+	//	echo "UPS\n";
+	curl_close($curl);
+	$fp = fopen($folder."/".$name,'w');
+	fwrite($fp, $raw);
+	fclose($fp);
 }
 
-function filename($img_tags) {
+function get_files($img_tags, $folder) {
 	foreach ($img_tags[1] as $img_link) {
 		$img_name = filename($img_link);
+		save_image($img_name, $img_link, $folder);
 	}
 }
-
 
 function find_tags($html) {
 	$img_tags = array();
-	preg_match_all('/<img\s+[^>]*src="([^"]*)"[^>]*>/is', $html, $img_tags);
+	preg_match_all('/<img\s+[^>]*src="([^"]*\.\w+)"[^>]*>/is', $html, $img_tags);
 	if (count($img_tags[0]) != 0)
 		return($img_tags);
 	else
 		exit;
 }
 
+function makefolder($url){
+	$url = preg_replace("/^.*?:\/\//", '', $url);
+	if (file_exists(strtok($url, '/')) && is_dir(strtok($url, '/')))
+		return (strtok($url, '/'));
+	$url = strtok($url, '/');
+	mkdir($url);
+	return ($url);
+}
+
 if ($argc == 2) {
 	$url = $argv[1];
 	$html = curl_call($url);
-	$folder = folder_name($html);
 	$img_tags = find_tags($html);
-	save_image($img_name, $link, $folder);
+//	print_r($img_tags);
+	$folder = makefolder($url);
+	get_files($img_tags, $folder);
 }
+
+// for tests:
+// https://www.webdesignerdepot.com/2018/01/8-sites-that-work-just-fine-without-js-thank-you/
 
 ?>

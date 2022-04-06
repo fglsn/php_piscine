@@ -1,6 +1,5 @@
 #!/usr/bin/php
-
-function	
+	
 <?php
 	if ($argc == 2 && is_readable($argv[1])) {
 		$content = file_get_contents($argv[1]) or exit(1);
