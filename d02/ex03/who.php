@@ -9,14 +9,12 @@
 			$parsed = unpack("a256usr/i1tid/a32tty/i1pid/s1logintype/s1unknown/i1time", $line);
 			//print_r($parsed);
 			if ($parsed['logintype'] == 7) {
-
-				$usr = str_pad(substr(trim($parsed['usr']), 0, 8), 8, " ") . " ";
-				$tty = str_pad(substr(trim($parsed['tty']), 0, 8), 8, " ") . " ";
-				$month = date("M", $parsed['time']);
-				$day = str_pad(date("j", $parsed['time']), 3, " ", STR_PAD_LEFT) . " ";
-				$time = date("H:i", $parsed['time']); //check when date > 10
-				//echo $time . "\n";
-				echo $usr . $tty . $month . $day . $time . "\n";
+				printf("%-8s %-8s %s %2s %s\n", 
+					trim($parsed['usr']), 
+					trim($parsed['tty']),
+					date("M", $parsed['time']),
+					date("j", $parsed['time']),
+					date("H:i", $parsed['time']));
 			}
 		}
 	}
