@@ -1,5 +1,4 @@
 #!/usr/bin/php
-	
 <?php
 	if ($argc == 2 && is_readable($argv[1])) {
 		$content = file_get_contents($argv[1]) or exit(1);
@@ -20,4 +19,7 @@
 		}, $content);
 		echo $content . "\n";
 	}
+	// s dot matches newline
+	// m treat as multi-line string
+	// i case insensitive
 ?>

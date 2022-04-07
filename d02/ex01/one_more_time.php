@@ -30,5 +30,4 @@ if ($argc == 2) {
 	parse_date($argv[1]);
 }
 
-
 ?>
