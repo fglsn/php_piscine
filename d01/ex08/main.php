@@ -2,8 +2,8 @@
 <?php
 include("ft_is_sort.php");
 
-$tab = array("!/@#;", "42", "Hello World", "hi", "zZzZzZz");
-$tab[] = "What are you doing now ?";
+//$tab = array("!/@#;", "42", "Hello World", "hi", "zZzZzZz");
+//$tab[] = "What are you doing now ?";
 //$tab = array("fwf", "fwgwgwg", "123", 3434);
 
 //$tab = array("1", "2", "3", "4", "5");
