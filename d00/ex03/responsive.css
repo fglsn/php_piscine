@@ -151,10 +151,6 @@
 			flex-direction: column;
 		}
 
-		.header {
-			min-width: 50px;
-		}
-
 		.table-container {
 			min-width: 50px;
 			margin: auto;

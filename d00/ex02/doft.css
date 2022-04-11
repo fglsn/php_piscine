@@ -156,3 +156,7 @@
 		font-weight: normal;
 		text-shadow: 4px 4px 10px red;
 	}
+
+	.hidden {
+		display: none;
+	}
