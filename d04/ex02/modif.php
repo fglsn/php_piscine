@@ -17,7 +17,6 @@ if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw']
 	$file_content = file_get_contents($path);
 	$data = unserialize($file_content);
 	if ($data[$login]) {
-		echo $data[$login]['passwd'] . "\n" . $old . "\n";
 		if ($data[$login]['passwd'] === $old) {
 			$data[$login] = [
 				'login' => $login,
