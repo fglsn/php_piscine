@@ -1,0 +1,5 @@
+curl 'http://localhost:8080/d03/ex02/print_get.php?gdb=pied2biche&barry=barreamine'
+curl -c cook.txt 'http://localhost:8080/d03/ex03/cookie_crisp.php?action=set&name=food&value=choucroute'
+curl -b cook.txt 'http://localhost:8080/d03/ex03/cookie_crisp.php?action=get&name=food'
+curl -c cook.txt 'http://localhost:8080/d03/ex03/cookie_crisp.php?action=del&name=food'
+curl -b cook.txt 'http://localhost:8080/d03/ex03/cookie_crisp.php?action=get&name=food'

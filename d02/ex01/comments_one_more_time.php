@@ -2,7 +2,7 @@
 <?php
 
 setlocale($LC_TIME, "fr_FR"); //or all? 
-date_default_timezone_set('Europe/Paris');
+date_default_timezone_set('Europe/Helsinki');
 
 if ($argc == 2) {
 	$pattern = '/[A-Za-z][a-z]+ \d{1,2} [A-Za-z][a-z]+ \d{4} \d{2}:\d{2}:\d{2}/';
@@ -11,6 +11,7 @@ if ($argc == 2) {
 	print_r($match);
 	$form = '%A %d %B %Y %X';
 	$res = strptime($argv[1], $form); //will not work on php >= 8.0
+	print_r($res);
 	if (!$res) {
 		echo "Wrong Format\n";
 		exit();
@@ -26,9 +27,12 @@ if ($argc == 2) {
 //"Mardi 12 Novembre 2013 12:02:21"  == 1384254141
 //"vendredi 1 avril 2022 20:22:21" == 1648837341
 //"dimanche 30 janvier 1994 16:15:34" == 759942934
-
-
-
+//"samedi 29 janvier 1994 16:15:34" == 759856534
+//"lundi 27 décembre 2021 14:45:01"
+//"Lundi 14 février 2022 16:15:34" == 1644851734
 //not valid "vendredi 1avril2022 20:22:21"
-?>
+//"dimanche 29 janvier 1994 16:15:34"
 
+//août
+?>
+"dimanche 29 janvier 1994 16:15:34"

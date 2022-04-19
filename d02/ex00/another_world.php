@@ -4,7 +4,8 @@
 if ($argc > 1) {
 	$str = $argv[1];
 	$str = trim(preg_replace('/[ \t]+/', ' ', $str));
-	echo $str . "\n";
+	if ($str)
+		echo $str . "\n";
 }
 
 ?>

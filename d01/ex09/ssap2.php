@@ -49,6 +49,6 @@ if ($argc > 1) {
 	}
 }
 // ./ssap2.php 123 1234 a A abc Abcde ZzZzzzz a1z a1zzz
-// ./ssap2.php toto tutu 4234 "_hop A2l+ XXX" ## "1948372 AhAhAh"   ?? ## in terminal  ??
+// ./ssap2.php toto tutu 4234 "_hop A2l+ XXX" ## "194837 AhAhAh"   ?? ## in terminal  ??
 // ./ssap2.php toto tutu 4234 "_hop A2l+ XXX" "##" "1948372 AhAhAh"
 ?>

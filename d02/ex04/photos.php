@@ -12,12 +12,15 @@
 function curl_call($url) {
 	$curl = curl_init();
 	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+	curl_setopt($curl, CURLOPT_TIMEOUT, 2000);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($curl, CURLOPT_FAILONERROR, 1);
 	curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 50);
 	curl_setopt($curl, CURLOPT_HEADER, TRUE);
 	curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 	$output = curl_exec($curl);
+	echo $output . "\n";
 	curl_close($curl);
 	return $output;
 }
@@ -36,8 +39,6 @@ function save_image($name, $url, $folder) {
 	curl_setopt($curl, CURLOPT_URL, $url);
 	curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US)");
 	$raw = curl_exec($curl);
-	//if (!$raw)
-	//	echo "UPS\n";
 	curl_close($curl);
 	$fp = fopen($folder."/".$name,'w');
 	fwrite($fp, $raw);

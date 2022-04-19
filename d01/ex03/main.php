@@ -2,8 +2,6 @@
 <?php
 include("ft_split.php");
 
-$f = fopen( 'php://stdin', 'r' );
-$line = fgets( $f ); 
-print_r(ft_split($line));
-fclose($f);
+print_r(ft_split("Hello World AAA"));
+print_r(ft_split("     123   Hello    345555     Worl !!!"));
 ?>

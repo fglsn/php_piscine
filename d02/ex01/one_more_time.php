@@ -2,7 +2,7 @@
 <?php
 
 function check_format($date) {
-	$pattern = '/[A-Za-z][a-z]+ \d{1,2} [A-Za-z][a-z]+ \d{4} \d{2}:\d{2}:\d{2}/';
+	$pattern = '/[A-Za-z][a-zàâçéèêëîïôûùüÿñæœ]+ \d{1,2} [A-Za-z][a-zàâçéèêëîïôûùüÿñæœ]+ \d{4} \d{2}:\d{2}:\d{2}/';
 	if (!preg_match($pattern, $date)) {
 		echo "Wrong Format\n";
 		exit();
@@ -10,8 +10,9 @@ function check_format($date) {
 }
 
 function parse_date($date) {
-	$time_format = '%A %d %B %Y %X';
+	$time_format = '%A %d %B %Y %H:%M:%S';
 	$parsed_date = strptime($date, $time_format); //will not work on php >= 8.1
+	print_r($parsed_date);
 	if (!$parsed_date) {
 		echo "Wrong Format\n";
 		exit();
@@ -23,11 +24,9 @@ function parse_date($date) {
 }
 
 if ($argc == 2) {
-	setlocale($LC_TIME, "fr_FR"); //LC_TIME or LC_ALL? 
+	setlocale($LC_TIME, "fr_FR"); 
 	date_default_timezone_set('Europe/Paris');
-
 	check_format($argv[1]);
 	parse_date($argv[1]);
 }
-
 ?>
