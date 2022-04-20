@@ -22,9 +22,10 @@
 				else {
 					$orig = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0));
 				}
-				$this->_x = $arr['dest']->_x - $arr['orig']->_x;
-				$this->_y = $arr['dest']->_y - $arr['orig']->_y; 
-				$this->_z = $arr['dest']->_z - $arr['orig']->_z; 
+				$this->_x = $arr['dest']->read_x() - $orig->read_x();
+				$this->_y = $arr['dest']->read_y() - $orig->read_y(); 
+				$this->_z = $arr['dest']->read_z() - $orig->read_z();
+
 			}
 
 			if (Vector::$verbose) {
@@ -66,13 +67,15 @@
 			if ($mag == 1)
 				return (clone $mag);
 			else {
-				// if ($mag > 0) {
+				 if ($mag > 0) {
 					$norm = new Vector(array('dest' => new Vertex(array(
 						'x' => $this->_x / $mag,
 						'y' => $this->_y / $mag,
 						'z' => $this->_z / $mag )
 					)));
-				// }
+				}
+				else
+					return ($mag);
 			}
 			return($norm);
 		}
