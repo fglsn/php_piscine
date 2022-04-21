@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<style>
+		#balloon {
+			width: 200px;
+			height: 200px;
+		}
+
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			border-radius: 200px;
+		}
+	</style>
+
+	<head>
+		<title>Balloon</title>
+	</head>
+
+	<body>
+		<div id="balloon" onclick="flipColor()"></div>
+		<script>
+			var balloon = document.getElementById("balloon");
+			balloon.width = balloon.clientWidth;
+			balloon.height = balloon.clientHeight;
+			function flipColor() {
+				balloon.style.cssText = 'background-color:green';
+			}	
+		</script>
+	</body>
+
+</html>
