@@ -1,3 +1,4 @@
+
 <- Vertex ----------------------------------------------------------------------
 
 The Vertex Class offers a coordinate encapsulation 
@@ -5,9 +6,13 @@ and provides reading and writing accessors
 for it's private attributes.
 
 The Vertex takes 3-5 parameters (set as private).
-Primary ones: 'x', 'y', 'z' as width, height and altitude respectively.
+
+Primary ones: 
+'x', 'y', 'z' as width, height and altitude respectively.
+
 Two optional paramerers: 'w' and 'color'. 
 'w' stands for homogeneous coordinate, if not provided 1.0 value is set to it by default.
-'color' is represented by an instance of the Color Class, by default represents white color: rgb(255,255,255).
+'color' is represented by an instance of the Color Class, by default represents 
+white color: rgb(255,255,255).
 
 ---------------------------------------------------------------------- Vertex ->

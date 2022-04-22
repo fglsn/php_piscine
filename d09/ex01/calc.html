@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Calc</title>
+	</head>
+
+	<body>
+		<input id="left" name="Number #1">
+		<select id="op" name="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="right" name="Number #2">
+		<input type="submit" value="Try me!" onclick="calc();">
+	</body>
+
+	<script>
+		function calc() {
+			num1 = parseInt(document.getElementById("left").value);
+			num2 = parseInt(document.getElementById("right").value);
+			var select = document.getElementById('op');
+			var op = select.options[select.selectedIndex].value;
+			if(num1 >= 0 && num2 >= 0) {
+				if (op === '+') {
+					console.log(num1 + num2);
+					alert(num1 + num2);
+				}
+				if (op === '-') {
+					console.log(num1 - num2);
+					alert(num1 - num2);
+				}
+				if (op === '*') {
+					console.log(num1 * num2);
+					alert(num1 * num2);
+				}
+				if (op === '/') {
+					if (num2 === 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return ;
+					}
+					console.log(num1 / num2);
+					alert(num1 / num2);
+				}
+				if (op === '%') {
+					if (num2 === 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return ;
+					}
+					console.log(num1 % num2);
+					alert(num1 % num2);
+				}
+			}
+			else {
+				alert("Error :(")
+				return ;
+			}
+		}
+		function useMe(){
+			alert("Please, use me...");
+		}
+		setInterval(useMe, 30000);
+	</script>
+</html>

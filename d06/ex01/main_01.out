@@ -1,6 +1,17 @@
 
 <- Vertex ----------------------------------------------------------------------
-Your documentation here.
+
+The Vertex Class offers a coordinate encapsulation 
+and provides reading and writing accessors
+for it's private attributes.
+
+The Vertex takes 3-5 parameters (set as private).
+Primary ones: 'x', 'y', 'z' as width, height and altitude respectively.
+Two optional paramerers: 'w' and 'color'. 
+'w' stands for homogeneous coordinate, if not provided 1.0 value is set to it by default.
+'color' is represented by an instance of the Color Class, by default represents 
+white color: rgb(255,255,255).
+
 ---------------------------------------------------------------------- Vertex ->
 Vertex( x: 0.00, y: 0.00, z:0.00, w:1.00, Color( red: 255, green: 255, blue: 255 ) ) constructed
 Vertex( x: 0.00, y: 0.00, z:0.00, w:1.00, Color( red: 255, green: 255, blue: 255 ) )

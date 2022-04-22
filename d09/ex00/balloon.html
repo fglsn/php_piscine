@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+	<style>
+		#balloon {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			border-radius: 100px;
+		}
+
+	</style>
+
+	<head>
+		<title>Balloon</title>
+	</head>
+
+	<body>
+		<div id="balloon" onclick="pumpUp();" onmouseout="leaveBalloon()"></div>
+		<script>
+			let c = 0;
+			let size = 200;
+			const balloon = document.getElementById("balloon");
+			function applyColor(c) {
+				if (c < 0)
+					c = -c;
+				if (c === 0)
+					balloon.style.backgroundColor = 'red';
+				else if (c === 1)
+					balloon.style.backgroundColor = 'green';
+				else if (c === 2)
+					balloon.style.backgroundColor = 'blue';
+			}
+			function applySize() {
+				if (size >= 420 || size <= 200)
+					size = 200;
+				balloon.style.width = size + 'px';
+				balloon.style.height = size + 'px';
+				balloon.style.borderRadius = size + 'px';
+			}
+			function pumpUp() {
+				size += 10;
+				applySize(size);
+				c = (c + 1) % 3;
+				applyColor(c);
+			}
+			function leaveBalloon() {
+				size -= 5;
+				applySize(size);
+				c = (c - 1) % 3;
+				applyColor(c);
+			}
+		</script>
+	</body>
+
+</html>

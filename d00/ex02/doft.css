@@ -4,9 +4,9 @@
 	}
 
 	.main {
-	padding-top: 11px;
-	margin: auto;
-	width: 1700px;
+		padding-top: 11px;
+		margin: auto;
+		width: 1700px;
 	}
 
 	.wrapper {
@@ -20,7 +20,7 @@
 	}
 
 	.header {
-		background-color: #909090;
+		background-color: rgb(144, 144, 144);
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 10px;
@@ -72,7 +72,7 @@
 		width: 175px;
 		height: 550px;
 		margin-left: 50px;
-		background-color: #909090;
+		background-color: rgb(144, 144, 144);
 	}
 
 	.right {
@@ -80,7 +80,7 @@
 		width: 175px;
 		height: 550px;
 		margin-right: 50px;
-		background-color: #909090;
+		background-color: rgb(144, 144, 144);
 	}
 
 	ul {
@@ -111,7 +111,7 @@
 		height: 725px;
 		margin: auto;
 		width: fit-content;
-		border: 10px solid #909090;
+		border: 10px solid rgb(144, 144, 144);
 	}
 
 	.clickable {
@@ -140,7 +140,7 @@
 		font-size: 21px;
 		padding: 3px 49px 60px 12px;
 		position: absolute;
-		background-color: #88ff89;
+		background-color: rgb(166, 252, 150);
 		width: 554px;
 		height: 150px;
 		margin-left: -50px;
@@ -168,6 +168,7 @@
 	}
 
 	button {
+		border-radius: 2px;
 		margin-left: 5px;
 		padding: 2px 7px;
 		border: solid 1px #8f8f8f;

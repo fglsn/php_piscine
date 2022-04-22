@@ -25,6 +25,8 @@ a:hover {
 
 .flex-container {
 	display: flex;
+	flex-direction: row-reverse;
+
 }
 
 
@@ -68,6 +70,101 @@ a:hover {
 .drop:hover .dropdown {
 	background-color: rgb(192 137 198 / 19%);
 }
+
+/*Secondary*/
+
+.drop-secondary {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-secondary {
+	border: none;
+}
+
+.dropdown-secondary-content {
+	display: none;
+	position: absolute;
+	min-width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-secondary-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-size: 1em;
+}
+
+.dropdown-secondary-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-secondary-content {
+	display: none;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-secondary-content a:hover {
+	background-color: #ddd;
+}
+
+.drop-secondary:hover .dropdown-secondary-content {
+	display: block;
+}
+	
+.drop-secondary:hover .dropdown-secondary {
+	background-color: rgb(192 137 198 / 19%);
+}
+
+/*third*/
+
+.drop-third {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-third {
+	border: none;
+}
+
+.dropdown-third-content {
+	display: none;
+	position: absolute;
+	min-width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-third-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-size: 1em;
+}
+
+.dropdown-third-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-third-content {
+	display: none;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-third-content a:hover {
+	background-color: #ddd;
+}
+
+.drop-third:hover .dropdown-third-content {
+	display: block;
+}
+	
+.drop-third:hover .dropdown-third {
+	background-color: rgb(192 137 198 / 19%);
+}
+
 
 /*header*/
 

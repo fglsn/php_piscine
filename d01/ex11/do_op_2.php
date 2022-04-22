@@ -5,19 +5,16 @@
 		exit (1);
 	}
 	
-	$arr = preg_split("/([\%\/\*\-\+])/", $argv[1], -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
-	for ($i = 0; $i < count($arr); $i++) {
-		$arr[$i] = trim($arr[$i]);
-	}
-
-	if (count($arr) != 3 || !is_numeric($arr[0]) || !is_numeric($arr[2])) {
+	$check = sscanf($argv[1], "%d %c %d %s");
+	print_r($check);
+	if (count($check) != 4 || !is_numeric($check[0]) || !is_numeric($check[2]) || $check[3]) {
 		echo "Syntax Error\n";
 		exit (1);
 	}
 
-	$n1 = $arr[0];
-	$n2 = $arr[2];
-	$op = $arr[1];
+	$n1 = $check[0];
+	$n2 = $check[2];
+	$op = $check[1];
 
 	if ($op == '+') {
 		echo ($n1 + $n2) . "\n";
@@ -40,5 +37,7 @@
 		else
 			echo ($n1 % $n2) . "\n";
 	}
+	else 
+		echo "Syntax Error\n";
 
 ?>

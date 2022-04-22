@@ -1,5 +1,4 @@
 <?php
-
 function ft_split($str) {
 
 	$arr = explode(" ", $str);
@@ -7,5 +6,4 @@ function ft_split($str) {
 	$arr = array_merge(array_diff($arr, array('')));
 	return ($arr);
 }
-
 ?>
