@@ -2,11 +2,35 @@
 
 <html>
 	<head>
-		<title>Calc</title>
+		<title>To-Do List</title>
 	</head>
 
 	<body>
 		<div id="ft_list">
-			
 		</div>
+		<button onclick="add()">New</button>
 	</body>
+
+	<script>
+		// function add() {
+		// 	let arr = prompt("Enter your numbers").split("\n");
+		// 	if (task != null) {
+		// 		document.getElementById("task").innerHTML = arr;
+		// 	}
+		// }
+		function add() {
+			var task = prompt("New task");
+			if (task != null && task !== "") {
+				var list = document.getElementById('ft_list');
+				var newListItem = document.createElement('div');
+				newListItem.innerHTML = task;
+				list.prepend(newListItem);
+			}
+		}
+		</script>
+	</script>
+</html>
+
+
+
+
