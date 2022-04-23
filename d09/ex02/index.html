@@ -12,25 +12,24 @@
 	</body>
 
 	<script>
-		// function add() {
-		// 	let arr = prompt("Enter your numbers").split("\n");
-		// 	if (task != null) {
-		// 		document.getElementById("task").innerHTML = arr;
-		// 	}
-		// }
+		let id_num = 0;
 		function add() {
 			var task = prompt("New task");
 			if (task != null && task !== "") {
 				var list = document.getElementById('ft_list');
-				var newListItem = document.createElement('div');
-				newListItem.innerHTML = task;
-				list.prepend(newListItem);
+				var task_container = document.createElement('div');
+				id_num += 1;
+				task_container.id = id_num;
+				task_container.innerHTML = task;
+				list.prepend(task_container);
 			}
 		}
+
+		function remove_task(id) {
+
+		}
+
 		</script>
 	</script>
 </html>
-
-
-
 
