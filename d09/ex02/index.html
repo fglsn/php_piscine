@@ -9,6 +9,11 @@
 		<div id="ft_list">
 		</div>
 		<button onclick="add()">New</button>
+		<div id="confirm">
+			<div class="message"></div>
+			<button class="yes">Yes</button>
+			<button class="no">No</button>
+		 </div>
 	</body>
 
 	<script>
@@ -18,15 +23,49 @@
 		// 		document.getElementById("task").innerHTML = arr;
 		// 	}
 		// }
+		let task_id = 0;
+		function remove(event) {
+			var conf = confirm("Do you want to remove the task?")
+			if (conf == true)
+				event.target.remove();
+			functionConfirm("Sure you wanna delete this task?", function yes() {
+				event.target.remove();
+			}, function no() {	}
+				);
+		}
 		function add() {
 			var task = prompt("New task");
 			if (task != null && task !== "") {
+				task_id += 1;
 				var list = document.getElementById('ft_list');
-				var newListItem = document.createElement('div');
-				newListItem.innerHTML = task;
-				list.prepend(newListItem);
+				var record = document.createElement('div');
+				record.innerHTML = task;
+				record.id = task_id;
+				record.onclick = remove;
+				list.prepend(record);
 			}
 		}
+
+		function functionConfirm(msg, confirm) {
+            const confirmBox = document.getElementById("confirm");
+			const message = confirmBox.querySelector('.message');
+			message.textContent = msg;
+			let yes = confirmBox.querySelector('.yes');
+			let no = confirmBox.querySelector('.no');
+			yes.replaceWith(yes.cloneNode(true));
+			no.replaceWith(no.cloneNode(true));
+			yes = confirmBox.querySelector('.yes');
+			no = confirmBox.querySelector('.no');
+			confirmBox.style.display = "block";
+			yes.addEventListener("click", confirm);
+			yes.addEventListener("click", function () {
+				confirmBox.style.display = "none";
+			});
+			no.addEventListener("click", function () {
+				confirmBox.style.display = "none";
+			});
+         }
+		
 		</script>
 	</script>
 </html>
