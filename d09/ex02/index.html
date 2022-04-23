@@ -5,7 +5,49 @@
 		<title>To-Do List</title>
 	</head>
 
+	<style>
+		body {
+			text-align: center;
+			font-family: Arial;
+		}
+
+		#ft_list {
+			margin: 20px;
+			text-align: center;
+		}
+		#confirm {
+			display: none;
+			background-color: #e2e0e052;
+			border: 1px solid #e2e2e2;
+			border-radius: 8px;
+			position: fixed;
+			box-shadow: 2px 2px 10px grey;
+			width: 250px;
+			left: 50%;
+			margin-left: -100px;
+			padding: 6px 8px 8px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		button {
+			background-color: #e2e0e052;
+			box-shadow: 2px 1px 2px grey;
+			display: inline-block;
+			border-radius: 5px;
+			border: 1px solid #aaa;
+			padding: 5px;
+			text-align: center;
+			width: 80px;
+			cursor: pointer;
+		}
+		#confirm .message {
+			padding: 1em;
+			text-align: center;
+		}
+	 </style>
+
 	<body>
+		<h3>To Do List:</h3>
 		<div id="ft_list">
 		</div>
 		<button onclick="add()">New</button>
@@ -17,37 +59,80 @@
 	</body>
 
 	<script>
-		// function add() {
-		// 	let arr = prompt("Enter your numbers").split("\n");
-		// 	if (task != null) {
-		// 		document.getElementById("task").innerHTML = arr;
-		// 	}
-		// }
 		let task_id = 0;
-		function remove(event) {
-			var conf = confirm("Do you want to remove the task?")
-			if (conf == true)
-				event.target.remove();
-			functionConfirm("Sure you wanna delete this task?", function yes() {
-				event.target.remove();
-			}, function no() {	}
-				);
+		let arr = [];
+
+		function setCookie(name,value,days) {
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days*24*60*60*1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 		}
+
+		function getCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0;i < ca.length;i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1,c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+			}
+			return null;
+		}
+
+		const cookieValue = getCookie("tasks");
+		if (cookieValue) {
+			arr = JSON.parse(decodeURIComponent(cookieValue));
+			for (let i = arr.length - 1; i >= 0; i--) {
+				add_task(arr[i].task, arr[i].id);
+				if (arr[i].id > task_id) {
+					task_id = arr[i].id;
+				}
+			}
+		}
+		
+		function saveTasksToCookie() {
+			const cookieValue = encodeURIComponent(JSON.stringify(arr));
+			setCookie("tasks", cookieValue, 10);
+		}
+
+		function remove(event) {
+			functionConfirm("Sure you wanna delete this task?", function() {
+				event.target.remove();
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i].id === Number(event.target.id)) {
+						arr.splice(i, 1);
+					}
+				}
+				saveTasksToCookie();
+			});
+		}
+
 		function add() {
 			var task = prompt("New task");
+			task_id += 1;
+			add_task(task, task_id);
+			arr.unshift({"task": task, "id": task_id});
+			saveTasksToCookie();
+		}
+
+		function add_task(task, id) {
 			if (task != null && task !== "") {
-				task_id += 1;
+				console.log("Adding a task " + task + " id " + id);
 				var list = document.getElementById('ft_list');
 				var record = document.createElement('div');
 				record.innerHTML = task;
-				record.id = task_id;
+				record.id = id;
 				record.onclick = remove;
 				list.prepend(record);
 			}
 		}
 
 		function functionConfirm(msg, confirm) {
-            const confirmBox = document.getElementById("confirm");
+			const confirmBox = document.getElementById("confirm");
 			const message = confirmBox.querySelector('.message');
 			message.textContent = msg;
 			let yes = confirmBox.querySelector('.yes');
@@ -64,8 +149,8 @@
 			no.addEventListener("click", function () {
 				confirmBox.style.display = "none";
 			});
-         }
-		
+		}
+		// python3 -m http.server 8000
 		</script>
 	</script>
 </html>

@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<input id="left" type="number" name="Number #1">
+		<input id="left" type="text" name="Number #1">
 		<select id="op" name="operator">
 			<option value="+">+</option>
 			<option value="-">-</option>
@@ -14,17 +14,31 @@
 			<option value="/">/</option>
 			<option value="%">%</option>
 		</select>
-		<input id="right" type="number" name="Number #2">
+		<input id="right" type="text" name="Number #2">
 		<input type="submit" value="Try me!" onclick="calc();">
+
+		<div id="confirm">
+			<div class="message"></div>
+			<button class="yes">Yes</button>
+			<button class="no">No</button>
+			<button class="cancel">Cancel</button>
+		 </div>
+		 <button onclick='functionConfirm("Do you want to remove this task?", function yes() {
+			alert("Yes")
+		 }, function no() {
+		 alert("No")
+		 }
+		 );'>Submit</button>
 	</body>
 
 	<script>
 		function calc() {
-			num1 = parseInt(document.getElementById("left").value);
-			num2 = parseInt(document.getElementById("right").value);
+			num1 = Number(document.getElementById("left").value);
+			num2 = Number(document.getElementById("right").value);
+			console.log(num1, num2);
 			var select = document.getElementById('op');
 			var op = select.options[select.selectedIndex].value;
-			if(num1 >= 0 && num2 >= 0) {
+			if(num1 >= 0 && num2 >= 0 && Number.isInteger(num1) && Number.isInteger(num2)) {
 				if (op === '+') {
 					console.log(num1 + num2);
 					alert(num1 + num2);
@@ -61,9 +75,9 @@
 				return ;
 			}
 		}
-		function useMe(){
-			alert("Please, use me...");
-		}
-		setInterval(useMe, 30000);
+		// function useMe(){
+		// 	alert("Please, use me...");
+		// }
+		// setInterval(useMe, 30000);
 	</script>
 </html>

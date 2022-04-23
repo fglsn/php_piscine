@@ -22,21 +22,17 @@
 			let size = 200;
 			const balloon = document.getElementById("balloon");
 			function applyColor(c, dir) {
+				console.log(c);
 				if (c < 0)
-				 	c = -c;
-				if (c === 0)
+				 	c = c + 3;
+				if (c === 0) {
 					balloon.style.backgroundColor = 'red';
-				else if (c === 1) {
-					if (dir === 1)
-						balloon.style.backgroundColor = 'blue';
-					else
-						balloon.style.backgroundColor = 'green';
+				}
+				else if (c === 1) {		
+					balloon.style.backgroundColor = 'green';
 				}
 				else if (c === 2) {
-					if (dir === 1)
-						balloon.style.backgroundColor = 'green';
-					else
-						balloon.style.backgroundColor = 'blue';
+					balloon.style.backgroundColor = 'blue';
 				}
 			}
 			function applySize() {

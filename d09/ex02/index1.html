@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+         function functionConfirm(msg, confirm) {
+            const confirmBox = document.getElementById("confirm");
+			const message = confirmBox.querySelector('.message');
+			message.textContent = msg;
+			let yes = confirmBox.querySelector('.yes');
+			let no = confirmBox.querySelector('.no');
+			yes.replaceWith(yes.cloneNode(true));
+			no.replaceWith(no.cloneNode(true));
+			yes = confirmBox.querySelector('.yes');
+			no = confirmBox.querySelector('.no');
+			confirmBox.style.display = "block";
+			yes.addEventListener("click", confirm);
+			yes.addEventListener("click", function () {
+				confirmBox.style.display = "none";
+			});
+			no.addEventListener("click", function () {
+				confirmBox.style.display = "none";
+			});
+         }
+      </script>
+      <style>
+         #confirm {
+			display: none;
+			background-color: #e2e0e052;
+			border: 1px solid #e2e2e2;
+			border-radius: 8px;
+			position: fixed;
+			box-shadow: 2px 2px 10px grey;
+			width: 250px;
+			left: 50%;
+			margin-left: -100px;
+			padding: 6px 8px 8px;
+			box-sizing: border-box;
+			text-align: center;
+         }
+         #confirm button {
+            background-color: #e2e0e052;
+			box-shadow: 2px 1px 2px grey;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 5px;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+         }
+         #confirm .message {
+			 padding: 1em;
+            text-align: center;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="confirm">
+         <div class="message"></div>
+         <button class="yes">Yes</button>
+         <button class="no">No</button>
+      </div>
+      <button onclick='functionConfirm("Sure you wanna delete this task?", function yes() {
+         alert("Yes")
+      }, function no() {
+      alert("no")
+      }
+      );'>submit</button>
+   </body>
+</html>
