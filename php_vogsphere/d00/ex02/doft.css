@@ -1,0 +1,176 @@
+
+	body {
+		background-color: rgb(80,80,80);
+	}
+
+	.main {
+		padding-top: 11px;
+		margin: auto;
+		width: 1700px;
+	}
+
+	.wrapper {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.borders {
+		border-radius: 10px;
+		box-shadow: 13px 13px 13px black;
+	}
+
+	.header {
+		background-color: rgb(144, 144, 144);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 10px;
+		height: 165px;
+		margin-bottom: 30px;
+	}
+
+	.logo {
+		position: absolute;
+	}
+
+	.img_logo {
+		padding-top: 10px;
+		height: 137px;
+	}
+
+	.loupe {
+		text-align: right;
+		margin-right: 30px;
+		padding-top: 13px;
+		margin-bottom: -20px;
+		}
+	
+	.img_loupe {
+		position: relative;
+		height: 175px;
+	}
+
+	.reload {
+		width: 25px;
+		float: right;
+		margin-top: -163px;
+		margin-right: 10px;
+	}
+
+	.close {
+		float: right;
+		margin-top: -43px;
+		margin-right: 10px;
+	}
+
+	.red {
+		border: 6px solid red;
+		border-radius: 4px;
+	}
+
+	.left {
+		float: left;
+		width: 175px;
+		height: 550px;
+		margin-left: 50px;
+		background-color: rgb(144, 144, 144);
+	}
+
+	.right {
+		float: right;
+		width: 175px;
+		height: 550px;
+		margin-right: 50px;
+		background-color: rgb(144, 144, 144);
+	}
+
+	ul {
+		padding: 0px;
+
+	}
+	
+	li {
+		padding: 3px;
+		text-align: center;
+		list-style-type: none;
+	}
+	
+	li img {
+		width: 90px;
+	}
+
+	.wall {
+		background-image: url(resources/brick.jpg);
+		background-position: left bottom;
+		background-repeat: repeat;
+		height: 71px;
+		width: 127px;
+		margin: auto;
+	}
+
+	.cluster {
+		height: 725px;
+		margin: auto;
+		width: fit-content;
+		border: 10px solid rgb(144, 144, 144);
+	}
+
+	.clickable {
+		display: flex;
+	}
+
+	#pc {
+		position: absolute;
+		right: 35%;
+		bottom: 40%;
+		width: 250px;
+		height: 200px;
+	}
+
+	#chair {
+		position: absolute;
+		left: 40%;
+		bottom: 40%;
+		width: 150px;
+		height: 200px;
+	}
+
+	.message {
+		letter-spacing: 1px;
+		font-family: Arial, sans-serif;
+		font-size: 21px;
+		padding: 3px 49px 60px 12px;
+		position: absolute;
+		background-color: rgb(166, 252, 150);
+		width: 554px;
+		height: 150px;
+		margin-left: -50px;
+		margin-top: -90px;
+	}
+
+	.message strong {
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		font-size: 36px;
+		font-weight: normal;
+		}
+	
+	.message b {
+		font-weight: normal;
+		text-shadow: 5px 5px 4px red;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	input {
+		border-color: floralwhite;
+		width: 82%;
+	}
+
+	button {
+		border-radius: 2px;
+		margin-left: 5px;
+		padding: 2px 7px;
+		border: solid 1px #8f8f8f;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c8c8c8));
+	}

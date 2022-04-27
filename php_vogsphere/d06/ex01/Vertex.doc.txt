@@ -1,0 +1,24 @@
+
+<- Vertex ----------------------------------------------------------------------
+
+The Vertex Class offers a coordinate encapsulation 
+and provides reading and writing accessors
+for it's private attributes.
+
+The Vertex takes 3-5 parameters (all set as private).
+
+Three primary parameters that user must provide: 
+'x', 'y', 'z' as 
+width, height and depth respectively. 
+Undefined behaviour if parameters left empty.
+
+Two optional paramerers: 'w' and 'color'. 
+- 'w' stands for homogeneous coordinate, if not provided 1.0 value is set to it by default.
+- 'color' used to set a color of Vertex. 
+'color' parameter is instanse Color class (note: undefined behaviour if provided something else)
+If 'color' parameter not set, then white color (rgb(255,255,255)) will be set by default. 
+
+As mentioned above: all attributes are private, but may be accessible
+with help of attributes write and read.
+
+---------------------------------------------------------------------- Vertex ->

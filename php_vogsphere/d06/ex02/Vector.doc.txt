@@ -1,0 +1,52 @@
+
+<- Vector ----------------------------------------------------------------------
+
+Vector class is used to for ex. represent directions or movements, 
+can be applied to vector operations.
+
+A vector is always represented by the following characteristics:
+
+	• Its x magnitude (length)
+	• Its y magnitude (length) 
+	• Its z magnitude (length)
+	• The w coordinate
+
+
+
+User must provide parameters (instances of Vertex class) in order to create a Vector.
+Class takes array as a parameter with one mandatory and one optional key:
+
+- ’dest’: the vector’s destination vertex, mandatory.
+-’orig’: the vector’s origin vertex, optional. 
+By default 'orig' is set to instance of Vertex with the x=0, y=0, z=0, w=1.
+If provided: must be an instance of Vertex class, undefined otherwise.
+
+Multiple methods are present:
+
+	- vector normalize() : returns a normalized version of the vector.
+
+	- vector add( Vector $rhs ) : returns the sum vector of two
+	vectors.
+
+	- vector sub( Vector $rhs ) : returns the difference vector of
+	both vectors.
+
+	- vector div( $k ) : returns division of vector on value.
+
+	- vector opposite() : returns the opposite vector.
+
+	- vector scalarProduct( $k ) : returns the multiplication of the
+	vector with a scalar.
+
+	-float dotProduct( Vector $rhs ) : returns the scalar
+	multiplication of both vectors.
+
+	-float cos( Vector $rhs ) : returns the angle’sAppendix cosine
+	between both vectors.
+
+	-vector crossProduct( Vector $rhs ) : returns the cross
+	multiplication of both vectors (right-hand mark!)
+
+Vector Class provides read only accessors for its four attributes.
+
+---------------------------------------------------------------------- Vector ->

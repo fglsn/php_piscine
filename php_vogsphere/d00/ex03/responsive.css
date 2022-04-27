@@ -1,0 +1,165 @@
+
+	body {
+		width: 100%;
+		color: #09303D;
+		font-family: Helvetica, sans-serif;
+		background: url(https://images.wallpaperscraft.com/image/single/atom_chemistry_molecule_125734_1280x1024.jpg) center no-repeat;
+		background-size: cover;
+		background-color: #f1eadb;
+	}
+
+	.main {
+		padding: 0 30px;
+		position: relative;
+	}
+
+
+	h1 {
+		text-align: center;
+		font-weight: bolder;
+		font-size: 2.5vw;
+		padding: 3vw;
+		text-shadow: 1px 3px #2a2c2e1e;
+	}
+
+	.img-container {
+		padding: 1em 1em;
+		display: flex;
+		justify-content: center;
+		padding-top: 3em;
+	}
+
+	.align{
+		text-align: center;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 1.4vw;
+		padding-top: 3em;
+	}
+
+	img {
+		padding: 0.5em 1em;
+		min-width: 50px;
+		margin: auto;
+		z-index: 1;
+	}
+
+	.table {
+		table-layout: fixed;
+		background-color:rgba(248, 248, 248, 0.712);
+		box-sizing: border-box;
+		margin: auto;
+		padding: 25px 45px;
+		border-radius: 15px;
+		box-shadow: 2px 2px #dddccf5e;
+	}
+
+	.table-container {
+		margin: auto;
+		min-width: 100px;
+	}
+
+	td {
+		min-width: 20px;
+		margin: auto;
+	}
+
+	.element {
+		min-width: 20px;
+		margin: auto;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 2px;
+		border-color: rgba(255, 255, 255, 0.164);
+		box-shadow: 1px 2px #dad9d154;
+	}
+
+	.elem-style {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		padding: 3px;
+	}
+
+	.elem-section {
+		justify-content: space-between;
+		display: flex;
+	}
+
+	.esymb {
+		padding: 0.9vw 0.5vw 0.5vw 0.5vw;
+		text-align: center;
+		font-size: 1.1vw;
+		font-weight: bold;
+	}
+
+	.enum {
+		text-align: left;
+		font-size: 0.6vw;
+	}
+
+	.weight {
+		text-align: right;
+		font-size: 0.6vw;
+		padding-left: 4px;
+	}
+
+	.nonmetals {
+		background-color: #FFF5DC;
+	}
+
+	.metaloids {
+		background-color: #DDF1D6;
+	}
+
+	.metals {
+		background-color: #D7EFFA;
+	}
+
+	.noblegases {
+		background-color: #EED6D6;
+	}
+
+	.post-transition-metals {
+		background-color: #CBECD4;
+	}
+
+	.unknown {
+		background-color: #e8e8e8d5;
+	}
+
+	.alkalines {
+		background-color: #E1D3EB;
+	}
+
+	.alkalimetals {
+		background-color: #FFC4C4;
+	}
+
+	.lanthanides {
+		background-color: #EBFFBD;
+	}
+
+	.actinides {
+		background-color: #FFF9B3;
+	}
+
+	@media only screen and (max-width: 600px) {
+
+		.main {
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+		}
+
+		.table-container {
+			min-width: 50px;
+			margin: auto;
+			padding: 1em;
+		}
+
+		table {
+			overflow-x: auto;
+			min-width: 50px;
+			margin: auto;
+		}
+	}
